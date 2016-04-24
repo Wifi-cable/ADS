@@ -14,4 +14,23 @@ public class Bakterien {
             System.out.println( "Zur Stunde "+stunde+" gibt es "+bg+" Bakterien." ); 
         }
     }
+
+    public void incubus(double precision)
+    {
+        int stunde= 0;
+        double ratio= 10*precision;
+        double oldratio;
+        int bg;
+        bg= bt+bn;
+        do
+        {
+            oldratio= ratio;
+            bg= bt+bn;  // Gesamtzahl der Bakterien
+            ratio= bg/bt;
+            bn= bt;
+            bt= bg;
+            System.out.println( "Zur Stunde "+ ++stunde + " gibt es "+bg+" Bakterien. Wachstumstrate: "+ratio); 
+        }
+        while (Math.abs(ratio-oldratio)>precision);
+    }
 }
