@@ -26,7 +26,7 @@ public class Bakterien {
         {
             oldratio= ratio;
             bg= bt+bn;  // Gesamtzahl der Bakterien
-            ratio= bg/bt;
+            ratio= 1.0*bg/bt;
             bn= bt;
             bt= bg;
             System.out.println( "Zur Stunde "+ ++stunde + " gibt es "+bg+" Bakterien. Wachstumstrate: "+ratio); 
