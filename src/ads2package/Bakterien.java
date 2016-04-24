@@ -4,32 +4,36 @@ public class Bakterien
 {
     int bt= 0;   // teilbare Bakterien
     int bn= 1;   // neue Bakterien
+    int stunde= 1;
     
     public void incubus(int endzeit)
     {
-        for (int stunde= 1; stunde<=endzeit; stunde++)
+        while (stunde<=endzeit)
         {
             int bg= bt+bn;  // Gesamtzahl der Bakterien
             bn= bt;
             bt= bg;
-            System.out.println( "Zur Stunde "+stunde+" gibt es "+bg+" Bakterien." ); 
+            System.out.println( "Zur Stunde "+ stunde++ +" gibt es "+bg+" Bakterien." ); 
         }
     }
 
     public void incubus(double precision)
     {
-        int stunde= 0;
         double ratio= 10*precision;
-        double oldratio;
-        do
+        incubus(ratio, precision);
+    }
+
+    private double incubus(double oldratio, double precision)
+    {
+        int bg= bt+bn;
+        double ratio= 1.0*bg/bt;
+        bn= bt;
+        bt= bg;
+        System.out.println( "Zur Stunde "+ stunde++ + " gibt es "+bg+" Bakterien. Wachstumstrate: "+ratio); 
+        if (Math.abs(ratio-oldratio)>precision)
         {
-            oldratio= ratio;
-            int bg= bt+bn;  // Gesamtzahl der Bakterien
-            ratio= 1.0*bg/bt;
-            bn= bt;
-            bt= bg;
-            System.out.println( "Zur Stunde "+ ++stunde + " gibt es "+bg+" Bakterien. Wachstumstrate: "+ratio); 
+            ratio= incubus(ratio, precision);
         }
-        while (Math.abs(ratio-oldratio)>precision);
+        return ratio;
     }
 }
