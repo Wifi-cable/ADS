@@ -14,5 +14,9 @@ public class MainAdsUebung2 {
 	    Bakterien inkubator2;
 	    inkubator2 = new Bakterien();
 	    inkubator2.incubus(precision);
+
+	    System.out.println("\nIntervallhalbierungssuche in {1,2,3,4,5,6,7,8,9,10}");
+	    Suche oneInTen = new Suche();
+	    oneInTen.suche();
 	}
 }
