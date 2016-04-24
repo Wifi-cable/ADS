@@ -1,8 +1,8 @@
 package ads2package;
 
 public class Bakterien {
-    static int bt= 0;   // teilbare Bakterien
-    static int bn= 1;   // neue Bakterien
+    int bt= 0;   // teilbare Bakterien
+    int bn= 1;   // neue Bakterien
     
     public void incubus(int endzeit)
     {
