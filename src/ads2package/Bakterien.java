@@ -1,17 +1,39 @@
 package ads2package;
 
-public class Bakterien {
-    static int bt= 0;   // teilbare Bakterien
-    static int bn= 1;   // neue Bakterien
+public class Bakterien 
+{
+    int bt= 0;   // teilbare Bakterien
+    int bn= 1;   // neue Bakterien
+    int stunde= 1;
     
     public void incubus(int endzeit)
     {
-        for (int stunde= 1; stunde<=endzeit; stunde++)
+        while (stunde<=endzeit)
         {
             int bg= bt+bn;  // Gesamtzahl der Bakterien
             bn= bt;
             bt= bg;
-            System.out.println( "Zur Stunde "+stunde+" gibt es "+bg+" Bakterien." ); 
+            System.out.println( "Zur Stunde "+ stunde++ +" gibt es "+bg+" Bakterien." ); 
         }
+    }
+
+    public void incubus(double precision)
+    {
+        double ratio= 10*precision;
+        incubus(ratio, precision);
+    }
+
+    private double incubus(double oldratio, double precision)
+    {
+        int bg= bt+bn;
+        double ratio= 1.0*bg/bt;
+        bn= bt;
+        bt= bg;
+        System.out.println( "Zur Stunde "+ stunde++ + " gibt es "+bg+" Bakterien. Wachstumstrate: "+ratio); 
+        if (Math.abs(ratio-oldratio)>precision)
+        {
+            ratio= incubus(ratio, precision);
+        }
+        return ratio;
     }
 }
