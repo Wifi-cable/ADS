@@ -7,6 +7,6 @@ public class MainAdsUebung2 {
 	    inkubator1.incubus(15);
 	    Bakterien inkubator2;
 	    inkubator2 = new Bakterien();
-	    inkubator2.incubus(0.001);
+	    inkubator2.incubus(0.00001);
 	}
 }
