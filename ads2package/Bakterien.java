@@ -2,9 +2,9 @@ package ads2package;
 
 public class Bakterien 
 {
-    int bt= 0;   // teilbare Bakterien
-    int bn= 1;   // neue Bakterien
-    int stunde= 1;
+    static int bt= 0;   // teilbare Bakterien
+    static int bn= 1;   // neue Bakterien
+    static int stunde= 1;
     
     public void incubus(int endzeit)
     {
