@@ -2,8 +2,8 @@
 package ads2package;
 import java.util.Scanner;
 public class Suche {
-	Scanner in= new Scanner (System.in);
-	
+    Scanner in= new Scanner (System.in);
+
     int suche()
     {
         System.out.println("Bitte eingeben zu wollen die Zahl zu suchen. ");
@@ -34,7 +34,7 @@ public class Suche {
         {
             return suche(key, mitte+1, ende);
         }
-	}
+    }
     // Alternative Version ohne Rekursion
     int suche(boolean b)
     {
