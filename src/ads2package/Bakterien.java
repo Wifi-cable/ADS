@@ -19,7 +19,7 @@ public class Bakterien
 
     public void incubus(double precision)
     {
-        double ratio= 10*precision;
+        double ratio= (double)bt/bn;
         incubus(ratio, precision);
     }
 
